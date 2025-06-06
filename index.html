@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#fdf6f0"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icons/sun.png" type="image/png"/>
+  <title>Pastel Weather</title>
+</head>
+<body>
+  <div class="app-container glass-effect">
+    <header>
+      <h1>☁️Weather</h1>
+      <div class="toggles">
+        <button id="geoBtn">📍 Use My Location</button>
+        <label class="switch">
+          <input type="checkbox" id="darkToggle">
+          <span class="slider round"></span>
+        </label>
+        <button id="unitToggle">°C / °F</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="city" placeholder="Enter city..." />
+        <button id="searchBtn">Search 🔍</button>
+      </div>
+    </header>
+
+    <section id="loading" class="hidden">
+      <div class="loader"></div>
+    </section>
+
+    <section id="weatherInfo" class="weather-info card">
+      <!-- Current Weather Injected Here -->
+    </section>
+
+    <section id="forecast" class="forecast-container">
+      <!-- 5-Day Forecast Injected Here -->
+    </section>
+
+    <section class="chart-section">
+      <canvas id="tempChart"></canvas>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="revised_app.js" defer></script>
+</body>
+</html>

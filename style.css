@@ -1,0 +1,227 @@
+/* 🌐 Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  transition: background 0.5s ease;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* 🧊 Glass Card Layout */
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* 🔠 Headings */
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* 🔍 Search */
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.search-box input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 60%;
+  box-shadow: inset 2px 2px 6px #ffffff55, inset -2px -2px 6px #ffffff22;
+}
+
+.search-box button,
+#geoBtn,
+#unitToggle {
+  padding: 0.5rem 1rem;
+  background: #f8b500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.search-box button:hover,
+#geoBtn:hover,
+#unitToggle:hover {
+  transform: scale(1.05);
+}
+
+/* ☁️ Weather Info */
+.weather-info {
+  margin-top: 1.5rem;
+}
+
+.weather-info img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px #3332);
+}
+
+.weather-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.weather-info h3 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+/* 📆 Forecast */
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.forecast-container .card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.8rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* 📊 Chart */
+.chart-section {
+  margin-top: 2rem;
+}
+
+canvas#tempChart {
+  width: 100%;
+  max-height: 250px;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background: linear-gradient(to right, #232526, #414345);
+  color: #eee;
+}
+
+body.dark .app-container {
+  background: rgba(50, 50, 50, 0.6);
+}
+
+body.dark .search-box input {
+  background: #333;
+  color: #fff;
+}
+
+body.dark button {
+  background: #666;
+}
+
+body.dark .forecast-container .card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* 🌗 Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin: 0 10px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 3px;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #f8b500;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* ⏳ Loader */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #f8b500;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 🔄 Footer */
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .forecast-container {
+    flex-direction: column;
+  }
+}
